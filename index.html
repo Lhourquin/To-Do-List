@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>To-Do-List</title>
-</head>
-<body>
-  <h1>To Do List :</h1>
-  <input type="text" id="list"></input>
- <input type="submit" value="Submit" id="list">
- <ul>
-   <li></li>
- </ul>
- <script>
- "use strict";
+  <head>
+    <meta charset="UTF-8">
+    <title>To-Do-List</title>
+  </head>
+  <body>
+    <h1>To Do List :</h1>
+    <input type="text" id="list" value=""></input>
+    <input type="submit" value="Submit" id="list">
+    <ul>
+      <li>test</li>
+    </ul>
+    <script>
+      "use strict";
+/* cibler mes élément html,
+les lier entre eux,
+entrer les donner dans le champs,
+récupérer les donner entrer dans le champs(input.value?),
+les envoyer avec submit(event),
+les ajouter dans une liste (apprend)*/
 
- </script>
-</body>
+// cibler mes élément html
+let inputs = document.getElementById("list");
+let field = inputs.value;
+let ul = document.getElementsByTagName("ul")[0];
+
+function addLiContent(field) {
+
+  let li = document.createElement('li');
+//  li.insertAdjacentText('beforeend', field  );
+  ul.append(field);
+
+
+}
+
+addLiContent(field);
+//input.getAttribute("text");
+//récupérer les donner entrer dans le champs
+
+
+
+
+    </script>
+  </body>
 </html>
