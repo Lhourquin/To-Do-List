@@ -6,8 +6,8 @@
   </head>
   <body>
     <h1>To Do List :</h1>
-    <input type="text" id="list" value=""></input>
-    <input type="submit" value="Submit" id="list">
+    <input type="text" id="" value=""></input>
+    <input type="submit" value="Submit" onclick="addAndDelete(field)" id="submit"></input>
     <ul>
       <li>test</li>
     </ul>
@@ -21,20 +21,30 @@ les envoyer avec submit(event),
 les ajouter dans une liste (apprend)*/
 
 // cibler mes élément html
-let inputs = document.getElementById("list");
-let field = inputs.value;
+let input = document.getElementsByTagName("input")[0];
+let field = input.value;
 let ul = document.getElementsByTagName("ul")[0];
+let submit = document.getElementById("submit");
 
 function addLiContent(field) {
+     ul.insertAdjacentHTML('beforeend', "<li>" + field + "</li>");
+}
 
-  let li = document.createElement('li');
-//  li.insertAdjacentText('beforeend', field  );
-  ul.append(field);
+function deleteLiContent(){
 
+    input.value = "";
+}
+
+function addAndDelete(){
+
+  addLiContent(field);
+  deleteLiContent(field);
 
 }
 
-addLiContent(field);
+//list.onclick = addLiContent(field);
+//list.addEventListener("click", addLiContent(field));
+
 //input.getAttribute("text");
 //récupérer les donner entrer dans le champs
 
