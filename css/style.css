@@ -1,5 +1,10 @@
 li {
 
   text-transform : capitalize;
+}
+
+ul li.checked {
+
+    text-decoration: line-through;
 
 }
