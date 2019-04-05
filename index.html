@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
     <title>To-Do-List</title>
   </head>
   <body>
     <h1>To Do List :</h1>
-    <input type="text" id="" value=""></input>
-    <input type="submit" value="Submit" onclick="addAndDelete(field)" id="submit"></input>
+    <input class="text" type="text" id="" value="" onleydown="return addLiContent()" ></input>
+    <input type="submit" value="Submit" onleydown="addLiContent" onclick="addLiContent()" id="submit"></input>
     <ul>
-      <li>test</li>
     </ul>
     <script>
       "use strict";
@@ -22,12 +22,16 @@ les ajouter dans une liste (apprend)*/
 
 // cibler mes élément html
 let input = document.getElementsByTagName("input")[0];
-let field = input.value;
 let ul = document.getElementsByTagName("ul")[0];
 let submit = document.getElementById("submit");
 
-function addLiContent(field) {
-     ul.insertAdjacentHTML('beforeend', "<li>" + field + "</li>");
+function addLiContent() {
+     if(input.value == ""){
+     return null;
+     }else{
+     ul.insertAdjacentHTML('beforeend', "<li>" + input.value + "</li>");
+     deleteLiContent();
+     }
 }
 
 function deleteLiContent(){
@@ -35,12 +39,20 @@ function deleteLiContent(){
     input.value = "";
 }
 
-function addAndDelete(){
+    input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        submit.click();
+    }
+});
+
+
+/* function addAndDelete(){
 
   addLiContent(field);
   deleteLiContent(field);
 
-}
+} */
 
 //list.onclick = addLiContent(field);
 //list.addEventListener("click", addLiContent(field));
