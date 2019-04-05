@@ -8,7 +8,7 @@
   <body>
     <h1>To Do List :</h1>
     <input class="text" type="text" id="" value="" onleydown="return addLiContent()" ></input>
-    <input type="submit" value="Submit" onleydown="addLiContent" onclick="addLiContent()" id="submit"></input>
+    <input type="submit" value="Submit" onclick="addLiContent()" id="submit"></input>
     <ul>
     </ul>
 <script>
@@ -21,7 +21,7 @@ function addLiContent() {
   if(input.value == ""){
     return null;
   }else{
-    ul.insertAdjacentHTML('beforeend', "<li>" + input.value + "</li>");
+    ul.insertAdjacentHTML('beforeend', "<li class='checked'>" + input.value + "</li>");
     deleteLiContent();
   }
 }
@@ -37,6 +37,10 @@ input.addEventListener("keyup", function(event) {
     submit.click();
   }
 });
+
+ul.onclick = function (event){
+   event.target.classList.toggle("checked")
+}; 
     </script>
   </body>
 </html>
