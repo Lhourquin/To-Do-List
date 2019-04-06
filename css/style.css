@@ -1,6 +1,27 @@
+body{
+display:grid;
+grid-template-areas:"h1" "h1" "h1"
+                    "input" "submit"
+                    "ul" "ul" "ul";
+}
+body > h1{
+grid-area: h1;
+}
+body > .text{
+grid-area: input;
+}
+body > #submit{
+grid-area: submit;
+} 
+body > ul{
+grid-area: ul;
+}
 li {
 text-transform : capitalize;
 } 
 ul li.checked { 
 text-decoration: line-through;
+}
+h1{
+text-align:center;
 }
