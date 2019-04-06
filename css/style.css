@@ -8,14 +8,18 @@
     font-style: normal;
     text-decoration: none;
 }
-div{
-text-align:center;
+body{
+background-color:blue;
+}
+div.container{
 width:40%;
+}
+div{
+background-color:white;
 margin:5% auto;
 display:grid;
 grid-template-areas:"h1" "h1" "h1"
-                    "input" "submit"
-                    "ul" "ul" "ul";
+                    "input" "submit";
 }
 div > h1{
 grid-area: h1;
@@ -26,14 +30,14 @@ grid-area: input;
 div > #submit{
 grid-area: submit;
 } 
-div > ul{
-grid-area: ul;
-}
 li {
 text-transform : capitalize;
 } 
 ul li.checked { 
 text-decoration: line-through;
+}
+ul{
+margin:10% auto;
 }
 h1{
 text-align:center;
