@@ -33,17 +33,26 @@ grid-area: submit;
 } 
 li {
 text-transform : capitalize;
+padding:2%;
 } 
 ul li.checked { 
 text-decoration: line-through;
 }
 ul{
-margin:10% auto;
+padding: 10% 5% 10% 0;
 list-style-type:none;
 }
 h1{
 text-align:center;
+padding : 5%;
 }
 input{
-border:1px solid black;
+border-top:1px solid #03fcba;
+border-bottom:1px solid #03fcba;
+padding: 2%;
 }
+#submit{
+background-color: #03fcba;
+
+}
+
