@@ -9,19 +9,19 @@
     text-decoration: none;
 }
 body{
-background-color:blue;
+background-color:#fb5012;
 }
 div.container{
 width:40%;
 border-radius: 25px;
-box-shadow: 10px 10px 5px black;
+box-shadow: 10px 10px 5px #2b2733;
 }
 div{
 background-color:white;
 margin:5% auto;
 display:grid;
-grid-template-areas:"h1" "h1" "h1"
-                    "input" "submit";
+grid-template-areas:"h1 h1" 
+                    "input submit";
 }
 div > h1{
 grid-area: h1;
