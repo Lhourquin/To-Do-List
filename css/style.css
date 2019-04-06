@@ -13,6 +13,8 @@ background-color:blue;
 }
 div.container{
 width:40%;
+border-radius: 25px;
+box-shadow: 10px 10px 5px black;
 }
 div{
 background-color:white;
@@ -38,6 +40,7 @@ text-decoration: line-through;
 }
 ul{
 margin:10% auto;
+list-style-type:none;
 }
 h1{
 text-align:center;
