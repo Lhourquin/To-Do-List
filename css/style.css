@@ -19,7 +19,8 @@ background-color:white;
 margin:5% auto;
 display:grid;
 grid-template-areas:"h1 h1"
-                    "input submit";
+                    "input submit"
+                    "ul ul";
 
 }
 div > h1{
@@ -34,6 +35,9 @@ grid-area: submit;
 li {
 text-transform : capitalize;
 padding:2%;
+border-top:1px solid  #03fcba;
+border-bottom:1px solid  #03fcba;
+border-right:1px solid  #03fcba;
 } 
 ul li.checked { 
 text-decoration: line-through;
@@ -41,6 +45,7 @@ text-decoration: line-through;
 ul{
 padding: 10% 5% 10% 0;
 list-style-type:none;
+grid-area: ul;
 }
 h1{
 text-align:center;
