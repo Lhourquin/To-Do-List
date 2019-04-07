@@ -7,7 +7,7 @@ function addLiContent() {
   if(input.value == ""){
     return null;
   }else{
-    ul.insertAdjacentHTML('beforeend', "<li>" + input.value + "<i class='fas fa-trash-alt icon'></i>" + "</li>" );
+    ul.insertAdjacentHTML('beforeend', "<li>" + input.value + "<div><i class='fas fa-trash-alt '></i></div>" + "</li>" );
     deleteLiContent();
   }
 }
