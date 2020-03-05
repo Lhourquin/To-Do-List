@@ -7,7 +7,7 @@ function addLiContent() {
   if(input.value == ""){
     return null;
   }else{
-    ul.insertAdjacentHTML('beforeend', "<li>" + input.value + "<div><i class='fas fa-trash-alt icon'></i></div>" + "</li>" );
+    ul.insertAdjacentHTML('beforeend', "<li >" + input.value + "<div onclick=\"this.parentElement.style.display = ' none';\" class='poubelle'><i class='fas fa-trash '></i></div>" + "</li>" );
     deleteLiContent();
   }
 }
@@ -29,3 +29,16 @@ input.addEventListener("keyup", function(event) {
 ul.onclick = function (event){
    event.target.classList.toggle("checked");
 }; 
+
+////
+let poubelle = document.getElementsByClassName('poubelle');
+
+/*for(let idx of li){
+  idx.addEventListener('click',(e) => {
+      let target = e.target;
+      
+      if(target == idx){
+        console.log(idx);
+          idx.remove();
+      }
+  })}*/
