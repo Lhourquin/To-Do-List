@@ -1,13 +1,14 @@
 "use strict";
-let input = document.getElementsByTagName("input")[0];
+let input = document.getElementById("input");
 let ul = document.getElementsByTagName("ul")[0];
 let submit = document.getElementById("submit");
 
 function addLiContent() {
+
   if(input.value == ""){
     return null;
   }else{
-    ul.insertAdjacentHTML('beforeend', "<li >" + input.value + "<div onclick=\"this.parentElement.style.display = ' none';\" class='poubelle'><i class='fas fa-trash '></i></div>" + "</li>" );
+    ul.insertAdjacentHTML('afterbegin', "<li >" + input.value + "<div class='poubelle'><i class='fas fa-trash '></i></div>" + "</li>" );
     deleteLiContent();
   }
 }
@@ -29,4 +30,9 @@ input.addEventListener("keyup", function(event) {
 ul.onclick = function (event){
    event.target.classList.toggle("checked");
 }; 
+
+
+
+
+////
 
