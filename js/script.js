@@ -8,7 +8,7 @@ function addLiContent() {
   if(input.value == ""){
     return null;
   }else{
-    ul.insertAdjacentHTML('afterbegin', "<li >" + input.value + "<div class='poubelle'><i class='fas fa-trash '></i></div>" + "</li>" );
+    ul.insertAdjacentHTML('afterbegin', "<li >" + input.value + "<div class=''><i class='fas fa-trash poubelle'></i></div>" + "</li>" );
     deleteLiContent();
   }
 }
@@ -28,11 +28,19 @@ input.addEventListener("keyup", function(event) {
 });
 
 ul.onclick = function (event){
-   event.target.classList.toggle("checked");
+  let target = event.target;
+
+  for(let li of  document.getElementsByTagName('li')){
+    if(target == li){
+      li.classList.toggle("checked");
+  
+    }
+  }
+
+  for(let trash of document.getElementsByClassName('poubelle')){
+    if(target == trash){
+      trash.parentElement.parentElement.remove();
+    }
+  }
+  
 }; 
-
-
-
-
-////
-
