@@ -8,7 +8,7 @@ function addLiContent() {
   if(input.value == ""){
     return null;
   }else{
-    ul.insertAdjacentHTML('afterbegin', "<li >" + input.value + "<div class=''><i class='fas fa-trash poubelle'></i></div>" + "</li>" );
+    ul.insertAdjacentHTML('afterbegin', "<li >" + input.value + "<div><i class='fas fa-trash poubelle'></i></div>" + "</li>" );
     deleteLiContent();
   }
 }
