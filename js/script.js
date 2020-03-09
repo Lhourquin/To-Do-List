@@ -8,10 +8,11 @@ function addLiContent() {
   if(input.value == ""){
     return null;
   }else{
-    ul.insertAdjacentHTML('afterbegin', "<li >" + input.value + "<div><i class='fas fa-trash poubelle'></i></div>" + "</li>" );
+    ul.insertAdjacentHTML('afterbegin', "<li>" + input.value + "<div><i class='fas fa-trash poubelle'></i></div>" + "</li>" );
     deleteLiContent();
   }
 }
+
 
 function deleteLiContent(){
 
@@ -39,7 +40,9 @@ ul.onclick = function (event){
 
   for(let trash of document.getElementsByClassName('poubelle')){
     if(target == trash){
+      let value = trash.parentElement.parentElement.innerHTML;
       trash.parentElement.parentElement.remove();
+      
     }
   }
   
