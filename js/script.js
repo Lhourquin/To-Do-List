@@ -14,14 +14,6 @@ function addLiContent() {
     let arr = [...ul.children].map(li => li.textContent);
     console.log(arr);
     localStorage.setItem('toDO', arr);
-   /* let newArr = [];
-    for(let i = 0; i < arr.length; i++){
-      
-      newArr.push(arr[i].innerHTML);
-      window.localStorage.list = newArr;
-
-    }
-    console.log(arr);*/
     resetInputValue();
   }
 }
@@ -58,8 +50,7 @@ ul.onclick = function (event){
     if(target == trash){
       trash.parentElement.parentElement.remove();
       let arr = [...ul.children].map(li => li.textContent);
-    console.log(arr);
-    localStorage.setItem('toDO', arr);
+      localStorage.setItem('toDO', arr);
     }
   }
   
