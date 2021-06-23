@@ -3,21 +3,38 @@ let input = document.getElementById("input");
 let ul = document.getElementsByTagName("ul")[0];
 let submit = document.getElementById("submit");
 //let arr = ul.children;
-
 /////function for add li to the list   and to the locale storage
 function addLiContent() {
 
   if(input.value == ""){
+    
     return null;
   }else{
     ul.insertAdjacentHTML('afterbegin', "<li>" + input.value + "<div class=''><i class='fas fa-trash poubelle'></i></div>" + "</li>" );
     let arr = [...ul.children].map(li => li.textContent);
-    console.log(arr);
+//    console.log(arr);
     localStorage.setItem('toDO', arr);
+    let getData = JSON.stringify(localStorage.getItem('toDO'));
+    let arrOfValue = [];
+    for(let data in getData){
+        arrOfValue.push(getData[data]);
+    }
+    arrOfValue.split(',')join(' ');
+    console.log('arrOfValue :  ' + arrOfValue);
+    let newArr = [];
+    for(let itm in arrOfValue){
+
+      newArr.push(arrOfValue);
+    }
+    console.log('newArr : ' + newArr);
     resetInputValue();
+/*    for(let i = 0; i < arr.length; i++){
+        
+        localStorage.setItem('toDO' + (i+1) , arr[i]);
+    }*/
+    
   }
 }
-
 submit.onclick = addLiContent;
 
 
