@@ -2,37 +2,24 @@
 let input = document.getElementById("input");
 let ul = document.getElementsByTagName("ul")[0];
 let submit = document.getElementById("submit");
-//let arr = ul.children;
-/////function for add li to the list   and to the locale storage
+
 function addLiContent() {
 
   if(input.value == ""){
-    
+
     return null;
   }else{
     ul.insertAdjacentHTML('afterbegin', "<li>" + input.value + "<div class=''><i class='fas fa-trash poubelle'></i></div>" + "</li>" );
     let arr = [...ul.children].map(li => li.textContent);
-//    console.log(arr);
-    localStorage.setItem('toDO', arr);
-    let getData = JSON.stringify(localStorage.getItem('toDO'));
-    let arrOfValue = [];
-    for(let data in getData){
-        arrOfValue.push(getData[data]);
-    }
-    arrOfValue.split(',')join(' ');
-    console.log('arrOfValue :  ' + arrOfValue);
-    let newArr = [];
-    for(let itm in arrOfValue){
-
-      newArr.push(arrOfValue);
-    }
-    console.log('newArr : ' + newArr);
+    //    console.log(arr);
+    //localStorage.setItem('toDO', arr);
+    storage();
     resetInputValue();
-/*    for(let i = 0; i < arr.length; i++){
-        
+    /*    for(let i = 0; i < arr.length; i++){
+
         localStorage.setItem('toDO' + (i+1) , arr[i]);
     }*/
-    
+
   }
 }
 submit.onclick = addLiContent;
@@ -59,16 +46,36 @@ ul.onclick = function (event){
   for(let li of  document.getElementsByTagName('li')){
     if(target == li){
       li.classList.toggle("checked");
-  
+
     }
   }
 
   for(let trash of document.getElementsByClassName('poubelle')){
     if(target == trash){
       trash.parentElement.parentElement.remove();
-      let arr = [...ul.children].map(li => li.textContent);
-      localStorage.setItem('toDO', arr);
+      storage();
+      //let arr = [...ul.children].map(li => li.textContent);
+      //localStorage.setItem('toDO', arr);
     }
   }
-  
+
 }; 
+
+
+// localStorage
+ function storage(){
+    window.localStorage.todoList = ul.innerHTML;
+
+ }
+
+ function getValueOfLocalStorage(){
+    let storageContent = window.localStorage.todoList;
+
+    if(!storageContent){
+        ul.innerHTML = `<li>Cliquer sur moi pour me rogner, cliquer sur la poubelle pour me supprimer ;)<div class=''><i class='fas fa-trash poubelle'></i></div></li>`;
+    }else{
+        ul.innerHTML = storageContent;
+    }
+ }
+
+getValueOfLocalStorage();
